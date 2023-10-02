@@ -1,0 +1,1 @@
+After running the jupyter notebooks, this folder will contain all the channel maps used in the paper.

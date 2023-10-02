@@ -1,6 +1,10 @@
+This is a fork of [Magritte](https://github.com/Magritte-code/Magritte) of the version used in the Astronomy and Computing paper (in prep).
+After installing Magritte (see the [installation instructions](https://magritte.readthedocs.io/en/stable/0_getting_started/2_installation.html)),
+you can run the scripts and notebooks used for the paper, located in the folder /Paper/.
+
 <img src="docs/src/images/Magritte_logo_plain.svg" alt="logo" width="350"/>
 
-[![Build status](https://github.com/Magritte-code/Magritte/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/Magritte-code/Magritte/actions/workflows/build-and-test.yml)
+[![Build status](https://github.com/Magritte-code/Magritte_Paper_Astronomy_Computing/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/Magritte-code/Magritte_Paper_Astronomy_Computing/actions/workflows/build-and-test.yml)
 [![Documentation Status](https://readthedocs.org/projects/magritte/badge/?version=stable)](https://magritte.readthedocs.io/en/stable/?badge=stable)
 [![DOI](https://joss.theoj.org/papers/10.21105/joss.03905/status.svg)](https://doi.org/10.21105/joss.03905)
 ---
@@ -25,20 +29,21 @@ an asymptotic giant branch (AGB) star as it is perturbed by a companion.
 <img src="docs/src/_static/movie.gif" alt="movie"/>
 
 The hydro model was created by Jan Bolte using [MPI-AMRVAC](http://amrvac.org/). See the
-[examples](https://magritte.readthedocs.io/en/latest/1_examples/index.html) in the
+[examples](https://magritte.readthedocs.io/en/stable/1_examples/index.html) in the
 documentation to learn how these synthetic observations were created with Magritte.
 
 
 ## Documentation
 Please find our online documentation [here](https://magritte.readthedocs.io).
 In particular, see our
-[quickstart documentation](https://magritte.readthedocs.io/en/latest/0_getting_started/0_quickstart.html)
+[quickstart documentation](https://magritte.readthedocs.io/en/stable/0_getting_started/0_quickstart.html)
 for a quick intro.
 
 
 ## Papers about Magritte
 The following list of papers might provide further insights in the inner workings of
 Magritte:
+* _Magritte, a modern software library for spectral line radiative transfer (in prep.)
 * _Magritte II: Adaptive ray-tracing, mesh construction and reduction_
 ([arXiv](https://arxiv.org/abs/2011.14998), [MNRAS](https://doi.org/10.1093/mnras/staa3199));
 * _Magritte I: Non-LTE atomic and molecular line modelling_

@@ -39,29 +39,30 @@ jobs:
           #   -"docs/"
           # black_auto_fix: true
 
+# This is not the main repository, so we will not update version numbers, as the code itself will not change.
 #Before testing, we increase the version number. Otherwise, some delay (>30 mins) may occur between updating the code and doing the version increase.
-  UpdateVersion:
-    needs: run-linters
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout repo
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ github.ref }} #err, version.txt file should not be linted; but still checking out latest commit to be sure
-      - name: Update version (locally) using commit message to determine version increase
-        run: echo "NewVersion=$(python updateVersion.py "${{github.event.head_commit.message}}")" >> $GITHUB_ENV
-        working-directory: CI
-      - name: Auto commit the version change
-        uses: test-room-7/action-update-file@v1
-        with:
-          file-path: version.txt
-          commit-msg: "CI: increment version number to ${{env.NewVersion}}"
-          github-token: ${{ secrets.GITHUB_TOKEN}}
-          branch: stable
+  # UpdateVersion:
+  #   needs: run-linters
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: checkout repo
+  #       uses: actions/checkout@v3
+  #       with:
+  #         ref: ${{ github.ref }} #err, version.txt file should not be linted; but still checking out latest commit to be sure
+  #     - name: Update version (locally) using commit message to determine version increase
+  #       run: echo "NewVersion=$(python updateVersion.py "${{github.event.head_commit.message}}")" >> $GITHUB_ENV
+  #       working-directory: CI
+  #     - name: Auto commit the version change
+  #       uses: test-room-7/action-update-file@v1
+  #       with:
+  #         file-path: version.txt
+  #         commit-msg: "CI: increment version number to ${{env.NewVersion}}"
+  #         github-token: ${{ secrets.GITHUB_TOKEN}}
+  #         branch: stable
 
 
   BuildAndTest:
-    needs: UpdateVersion
+    # needs: UpdateVersion
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
