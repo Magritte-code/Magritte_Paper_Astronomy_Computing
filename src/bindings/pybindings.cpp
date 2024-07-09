@@ -192,12 +192,9 @@ PYBIND11_MODULE(core, module) {
             "Feautrier solver.")
         /// Solver is bugged, so removed from the api, as the shortchar solver can
         /// replace it
-        // .def (
-        //     "compute_radiation_field_feautrier_order_2_uv",
-        //     &Model::compute_radiation_field_feautrier_order_2_uv,
-        //     "Compute the radiation field for the modle using the 2nd-order
-        //     Feautrier solver."
-        // )
+        .def("compute_radiation_field_feautrier_order_2_uv",
+            &Model::compute_radiation_field_feautrier_order_2_uv,
+            "Compute the radiation field for the modle using the 2nd-order Feautrier solver.")
         .def("compute_radiation_field_feautrier_order_2_anis",
             &Model::compute_radiation_field_feautrier_order_2_anis,
             "Compute the radiation field for the modle using the 2nd-order "
@@ -291,6 +288,8 @@ PYBIND11_MODULE(core, module) {
         .def_readwrite("pop_prec", &Parameters::pop_prec, "Required precision for ALI.")
         .def_readwrite("min_opacity", &Parameters::min_opacity,
             "Minimum opacity that will be assumed in the solver.")
+        .def_readwrite("min_line_opacity", &Parameters::min_line_opacity,
+            "Minimum line opacity that will be assumed in the solver.")
         .def_readwrite("min_dtau", &Parameters::min_dtau,
             "Minimum optical depth increment that will be assumed in the solver.")
         .def_readwrite("population_inversion_fraction", &Parameters::population_inversion_fraction,

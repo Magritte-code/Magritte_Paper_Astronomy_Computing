@@ -82,8 +82,8 @@ examples to facilitate its independent use. Until then, please
 * James Hetherington
 
 **Contributors**
-* Silke Maes
 * Jolien Malfait
+* Silke Maes
 * [Mats Esseldeurs](https://matsesseldeurs.github.io/)
 * Atulit Srivastava
 * Arnout Coenegrachts
