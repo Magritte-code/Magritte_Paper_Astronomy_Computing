@@ -13,6 +13,13 @@ import matplotlib.pyplot as plt
 import magritte.tools    as tools
 import magritte.setup    as setup
 import magritte.core     as magritte
+import matplotlib
+
+matplotlib.rcParams["font.family"] = "serif"
+matplotlib.rcParams['mathtext.fontset'] = 'stix'
+matplotlib.rcParams['font.family'] = 'STIXGeneral'
+matplotlib.rcParams['axes.labelsize'] =  "large"
+matplotlib.rcParams['legend.fontsize'] = "large"
 
 from scipy.interpolate import interp1d
 
@@ -99,6 +106,8 @@ def run_model (a_or_b, nosave=False):
     model = magritte.Model (modelFile)
     timer1.stop()
 
+    model.parameters.min_line_opacity = 1.0e-13
+
     timer2 = tools.Timer('setting model')
     timer2.start()
     model.compute_spectral_discretisation ()
@@ -144,6 +153,7 @@ def run_model (a_or_b, nosave=False):
         plt.ylabel("relative change")
         plt.legend()
         plt.yscale("log")
+        np.save(f'ng_accel_comparison_no_adaptive_default_{modelName}_memlim_{mem_lim}.npy', rel_change_max_without)
         
     #reset plot colors
     plt.gca().set_prop_cycle(None)
@@ -178,6 +188,7 @@ def run_model (a_or_b, nosave=False):
         plt.ylabel("Max relative change")
         plt.legend(loc = "lower left")
         plt.yscale("log")
+        np.save(f'ng_accel_comparison_adaptive_default_{modelName}_memlim_{mem_lim}.npy', rel_change_max_with)
 
     plt.savefig(f'ng_accel_comparison_adaptive_default_{modelName}_multiple_memlims_remove_n_its_{remove_N_its}-{timestamp}.png')
     #plt.show() #will interrupt the program flow, so commented out
