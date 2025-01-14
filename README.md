@@ -1,4 +1,4 @@
-This is a fork of [Magritte](https://github.com/Magritte-code/Magritte) of the version used in the Astronomy and Computing paper (in prep).
+This is a fork of [Magritte](https://github.com/Magritte-code/Magritte) of the version used in the Astronomy and Computing paper.
 After installing Magritte (see the [installation instructions](https://magritte.readthedocs.io/en/stable/0_getting_started/2_installation.html)),
 you can run the scripts and notebooks used for the paper, located in the folder /Paper/.
 
